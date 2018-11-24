@@ -4,6 +4,19 @@
 
 
 
+const app = document.getElementById('root');
+const world = document.getElementById('top');
+const logo = document.createElement('img');
+
+logo.src = 'img/logo.png';
+
+
+const container = document.createElement('div');
+container.setAttribute('class','container');
+
+world.appendChild(logo);
+app.appendChild(container);
+
 // creating a request variable and assigning a new XMLRequest object to it
 var request = new XMLHttpRequest ();
 
@@ -48,15 +61,3 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 }
 
 request.send();
-
-const app = document.getElementById('root');
-
-const logo = document.createElement('img');
-
-logo.src = 'img/logo.png';
-
-const container = document.createElement('div');
-container.setAttribute('class','container');
-
-app.appendChild(logo);
-app.appendChild(container);
