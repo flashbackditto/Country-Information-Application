@@ -23,7 +23,7 @@ var request = new XMLHttpRequest ();
 
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
-var data = JSON.parse(this.response);
+// var data = JSON.parse(this.response);
 
 
 /* request.onload = function () {
@@ -65,10 +65,13 @@ request.send(); */
 
 
 
-document.getElementById("clickMe").onclick = function () { // having some problems here getting this to work
+document.getElementById("clickMe").onclick = function () {
 
 //begin accessing JSON data here
-var data = JSON.parse(this.response);
+var request = new XMLHttpRequest ();
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+
+var data = JSON.parse(request.onload.response); // currently responding with null, nothing to parse?
 
 if (request.status >= 200 && request.status < 400) { //optional if statement to console log if theres a 404 not found error or otherwise
   data.forEach( country => {
