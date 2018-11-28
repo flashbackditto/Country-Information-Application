@@ -110,18 +110,27 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const h1 = document.createElement('h1');
     h1.textContent = country.name;
 
+    //Creates an h3 set to capital Name
+    const h3 = document.createElement('h3');
+    h3.textContent = `Capital: ${country.capital}`;
+
     //creates a paragraph and seets the text to population
 
     const p = document.createElement('p');
     country.population = country.population;
-    p.textContent = `Population:${country.population}`;
+    p.textContent = `Population: ${country.population}`;
+
+    const p2 = document.createElement('p');
+    p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     //appends the cards to the container element
     container.appendChild(card);
 
     //each card will have an h1 and p
     card.appendChild(h1);
+    card.appendChild(h3);
     card.appendChild(p);
+    card.appendChild(p2);
   });
  } else {
   console.log('error');
@@ -142,11 +151,17 @@ request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 document.getElementById('alphabetical').onclick = function () { //default data structure is Alphabetical
 
+
+
 //begin accessing JSON data here
 var data = JSON.parse(request.response);
 
 if (request.status >= 200 && request.status < 400) { //optional if statement to console log if theres a 404 not found error or otherwise
   data.forEach( country => {
+
+ console.log(country.capital);
+
+
 
     //Creates a div with a class of card
     const card = document.createElement('div');
@@ -157,17 +172,28 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     const h1 = document.createElement('h1');
     h1.textContent = country.name;
 
+    //Creates an h3 set to capital Name
+    const h3 = document.createElement('h3');
+    h3.textContent = `Capital: ${country.capital}`;
+
     //creates a paragraph and seets the text to population
     const p = document.createElement('p');
     country.population = country.population;
-    p.textContent = `Population:${country.population}`;
+    p.textContent = `Population: ${country.population}`;
+
+    const p2 = document.createElement('p');
+    p2.textContent = `Currency: ${country.currencies[0].name}`;
+
+
 
     //appends the cards to the container element
     container.appendChild(card);
 
     //each card will have an h1 and p
     card.appendChild(h1);
+    card.appendChild(h3);
     card.appendChild(p);
+    card.appendChild(p2);
   });
  } else {
   console.log('error');
@@ -175,3 +201,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 }
 
 request.send();
+
+//Problem to solve
+//each time a button is clicked it adds the DOM elements to the page without refreshing
+//the page and clearing away the previously creted DOM elements
