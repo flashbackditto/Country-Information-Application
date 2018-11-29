@@ -88,10 +88,20 @@ request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 document.getElementById("clickMe").onclick  = function () {
 
 
+   var myNode = document.getElementById("root");
+if (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
+
+
 var data = JSON.parse(request.response);
 
 
 if (request.status >= 200 && request.status < 400) {  //optional if statement to console log if theres a 404 not found error or otherwise
+
+//Clear previously created elements to make room for new elements
+
+
 
   var byPop = data.slice(0);
   byPop.sort(function(a,b) {
@@ -113,6 +123,8 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     //Creates an h3 set to capital Name
     const h3 = document.createElement('h3');
     h3.textContent = `Capital: ${country.capital}`;
+
+
 
     //creates a paragraph and seets the text to population
 
@@ -205,3 +217,6 @@ request.send();
 //Problem to solve
 //each time a button is clicked it adds the DOM elements to the page without refreshing
 //the page and clearing away the previously creted DOM elements
+
+//got Population button to clear page, but unable to present new DOM elements, perhaps I need
+//to change to event listeners, bubbling problem perhaps..?
