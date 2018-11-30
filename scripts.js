@@ -85,21 +85,26 @@ request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 // var data = JSON.parse(this.response);
 
 
-document.getElementById("clickMe").onclick  = function () {
+var popButton = document.getElementById("clickMe").addEventListener('click', () => {
+  popButtonClick();
+  popGetThenSort();
+});
 
+function popButtonClick(e){
 
-   var myNode = document.getElementById("root");
-if (myNode.firstChild) {
+//Clear previously created elements to make room for new elements
+ var myNode = document.getElementById("root");
+   if (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild);
   }
+}
 
 
+function popGetThenSort (e) {
 var data = JSON.parse(request.response);
 
 
 if (request.status >= 200 && request.status < 400) {  //optional if statement to console log if theres a 404 not found error or otherwise
-
-//Clear previously created elements to make room for new elements
 
 
 
@@ -110,6 +115,10 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
 
   byPop.forEach( country => {
+
+    //re-Creates Container thats removed by popButtonClick function
+    const container = document.createElement('div');
+    container.setAttribute('class','container');
 
     //Creates a div with a class of card
     const card = document.createElement('div');
@@ -135,6 +144,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
+    //re-appends container after removal
+    app.appendChild(container);
+
     //appends the cards to the container element
     container.appendChild(card);
 
@@ -143,6 +155,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     card.appendChild(h3);
     card.appendChild(p);
     card.appendChild(p2);
+
+
+
   });
  } else {
   console.log('error');
@@ -216,7 +231,13 @@ request.send();
 
 //Problem to solve
 //each time a button is clicked it adds the DOM elements to the page without refreshing
-//the page and clearing away the previously creted DOM elements
+//the page and clearing away the previously creted DOM elements  SOLVED..? I think, needs a few tests to be done
 
 //got Population button to clear page, but unable to present new DOM elements, perhaps I need
-//to change to event listeners, bubbling problem perhaps..?
+//to change to event listeners, bubbling problem perhaps..? SOLVED!!
+
+// Solved removal on click, example is in the popButton button funtions, just had to re-createElement after removal
+// and re-appendChild to app.
+
+//Next step is apply the fix to Alphabetical sort, run tests, create third sorting function with new approach
+// and add a second api with functionality. 
