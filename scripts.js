@@ -86,18 +86,19 @@ request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 
 var popButton = document.getElementById("clickMe").addEventListener('click', () => {
-  popButtonClick();
+  removeLast();
   popGetThenSort();
 });
 
-function popButtonClick(e){
+function removeLast(e){
 
 //Clear previously created elements to make room for new elements
  var myNode = document.getElementById("root");
-   if (myNode.firstChild) {
-    myNode.removeChild(myNode.firstChild);
+  for (let i = myNode.childNodes.length - 1; i >= 0; i--) {
+     myNode.removeChild(myNode.childNodes[i]);
   }
 }
+
 
 
 function popGetThenSort (e) {
@@ -176,10 +177,14 @@ var request = new XMLHttpRequest ();
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 
-document.getElementById('alphabetical').onclick = function () { //default data structure is Alphabetical
+//document.getElementById('alphabetical').onclick = function () { //default data structure is Alphabetical
 
+  var alphabeticalButton = document.getElementById("alphabetical").addEventListener('click', () => {
+    removeLast();
+    defaultSort();
+  });
 
-
+function defaultSort (e) {
 //begin accessing JSON data here
 var data = JSON.parse(request.response);
 
@@ -188,6 +193,10 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
  console.log(country.capital);
 
+
+ //re-Creates Container thats removed by popButtonClick function
+ const container = document.createElement('div');
+ container.setAttribute('class','container');
 
 
     //Creates a div with a class of card
@@ -211,7 +220,8 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
-
+    //re-appends container after removal
+    app.appendChild(container);
 
     //appends the cards to the container element
     container.appendChild(card);
@@ -239,5 +249,6 @@ request.send();
 // Solved removal on click, example is in the popButton button funtions, just had to re-createElement after removal
 // and re-appendChild to app.
 
-//Next step is apply the fix to Alphabetical sort, run tests, create third sorting function with new approach
-// and add a second api with functionality. 
+//Next step is apply the fix to Alphabetical sort SOLVED!
+// run tests, create third sorting function with new approach
+// and add a second api with functionality
