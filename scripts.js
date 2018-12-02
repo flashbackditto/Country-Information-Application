@@ -132,9 +132,12 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
     //Creates an h3 set to capital Name
     const h3 = document.createElement('h3');
-    h3.textContent = `Capital: ${country.capital}`;
 
-
+    if (country.capital === "") {
+        h3.textContent = "No Capital Info Available";
+    }else {
+        h3.textContent = `Capital: ${country.capital}`;
+   }
 
     //creates a paragraph and seets the text to population
 
@@ -210,11 +213,16 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
     //Creates an h3 set to capital Name
     const h3 = document.createElement('h3');
-    h3.textContent = `Capital: ${country.capital}`;
+
+ if (country.capital === "") {
+     h3.textContent = "No Capital Info Available";
+ }else {
+     h3.textContent = `Capital: ${country.capital}`;
+}
 
     //creates a paragraph and seets the text to population
     const p = document.createElement('p');
-    country.population = country.population;
+    
     p.textContent = `Population: ${country.population}`;
 
     const p2 = document.createElement('p');

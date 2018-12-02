@@ -13,6 +13,10 @@
   border: 1px solid gray;
 }
 
+.card p{
+  text-transform: capitalize;
+}
+
 @media screen and (min-width: 600px) {
   .card {
     flex: 1 1 calc(50% - 2rem);
