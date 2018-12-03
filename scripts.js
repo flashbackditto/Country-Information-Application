@@ -149,7 +149,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     const p3 = document.createElement('p');
-    country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p3.textContent = `Size: ${country.area} sq kilometers`;
 
     //re-appends container after removal
@@ -341,7 +341,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     const p3 = document.createElement('p');
-    country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); this reg ex is breaking the page resulting in alphaSort only getting to B, I think this may have to do with the decimals in area. it's also causing problems in popSort, however it dosen't seem to cause problems when inside an if statement.
     p3.textContent = `Size: ${country.area} sq kilometers`;
 
     //re-appends container after removal

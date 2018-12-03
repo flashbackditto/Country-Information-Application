@@ -15,13 +15,14 @@
   display: flex;
   flex-wrap: wrap;
   width: 30%;
+
 }
 
 .card {
   margin: 1rem;
   border: 1px solid gray;
-}
 
+}
 .card h1 {
   display: flex;
 }
@@ -35,10 +36,9 @@
     flex: 1 1 calc(50% - 2rem);
   }
 }
+
 @media screen and (min-width: 900px) {
   .card {
     flex: 1 1 calc(33% - 2rem);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
