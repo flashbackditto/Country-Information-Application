@@ -148,6 +148,10 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
+    const p3 = document.createElement('p');
+    country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    p3.textContent = `Size: ${country.area} sq kilometers`;
+
     //re-appends container after removal
     app.appendChild(container);
 
@@ -159,7 +163,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     card.appendChild(h3);
     card.appendChild(p);
     card.appendChild(p2);
-
+    card.appendChild(p3);
 
 
   });
@@ -237,18 +241,22 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
    //START OF SIZE SORT ISSUES
 
 
-    if (country.area == null) {
+    if (country.area === null) {
     var countryNode = document.getElementById("root");
-      while (countryNode.hasChildNodes()) {
-      countryNode.removeChild(countryNode.lastChild);
-     // for (let i = countryNode.childNodes.length - 1; i >= 0; i--) {
-     //    countryNode.removeChild(countryNode.childNodes[i]);
-     }
+      // while (countryNode.hasChildNodes()) {
+      // countryNode.removeChild(countryNode.firstChild);
 
-   } else {
+      for (let i = countryNode.childNodes.length -1; i >= 0; i--) {
+      countryNode.removeChild(countryNode.childNodes[i]);
+    }
+
+     } else {
       country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p3.textContent = `Size: ${country.area} sq kilometers`;
   }
+
+ //  document.getElementById('root').removeChild(document.getElementById('root').firstChild);
+
 
 
     //re-appends container after removal
@@ -328,8 +336,13 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     country.population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p.textContent = `Population: ${country.population}`;
     console.log(typeof country.population)
+
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
+
+    const p3 = document.createElement('p');
+    country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    p3.textContent = `Size: ${country.area} sq kilometers`;
 
     //re-appends container after removal
     app.appendChild(container);
@@ -342,6 +355,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     card.appendChild(h3);
     card.appendChild(p);
     card.appendChild(p2);
+    card.appendChild(p3);
   });
  } else {
   console.log('error');
