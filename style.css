@@ -2,6 +2,25 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #3A0896;
+}
+
+#btnWrapper {
+  display: inline-flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100vw;
+}
+#btnWrapper .buttonContainer {
+  margin: 1rem;
+}
+#btnWrapper .buttonContainer .buttons {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
 #root {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,14 +39,22 @@
 .card {
   margin: 1rem;
   border: 1px solid gray;
+  border-radius: 1rem;
 }
-
 .card h1 {
   display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
 }
-
+.card h3 {
+  display: flex;
+  justify-content: center;
+}
 .card p {
   text-transform: capitalize;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 600px) {
