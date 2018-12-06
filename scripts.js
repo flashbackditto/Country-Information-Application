@@ -132,9 +132,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
    //Makes card a link to reeant wiki page
     const a = document.createElement('a');
     a.setAttribute('target', '_"blank"');
-    a.setAttribute('href', 'https://en.wikipedia.org/');
+    a.setAttribute('href', `https://en.wikipedia.org/wiki/${country.name}`);
     container.appendChild(a);
-
+    a.appendChild(card);
 
     //creates an h1 set to the Countrys Name
     const h1 = document.createElement('h1');
@@ -161,14 +161,22 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     const p3 = document.createElement('p');
-    // country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    p3.textContent = `Size: ${country.area} sq kilometers`;
+
+        if (country.area === null) {
+
+        var countryNode = document.getElementById("root");
+          p3.textContent = `Size: No size data available`;
+
+         } else {
+          country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        p3.textContent = `Size: ${country.area} sq kilometers`;
+      }
 
     //re-appends container after removal
     app.appendChild(container);
 
     //appends the cards to the container element
-    container.appendChild(card);
+    // container.appendChild(card);
 
 
     //each card will have an h1 and p

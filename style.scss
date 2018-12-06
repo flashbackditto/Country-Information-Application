@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Acme');
+@import url('https://fonts.googleapis.com/css?family=Acme|Roboto');
 
 
 $primary-color: #3A0896;
 $heading-font: 'Acme', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
 
 * {
   box-sizing: border-box;
@@ -15,8 +17,8 @@ body {
 #btnWrapper {
   display: inline-flex;
   justify-content: center;
-  margin: 0 auto;
-  width: 100vw;
+
+  width: 100%;
 
   .buttonContainer {
     margin: 1rem;
@@ -26,6 +28,10 @@ body {
     border-radius: .5rem;
     text-transform: uppercase;
     }
+
+  .buttons:hover{
+    cursor: pointer;
+   }
   }
 }
 
@@ -40,12 +46,18 @@ body {
   flex-basis: 0;
 }
 
-.container {
+a {
   display: flex;
   flex-wrap: wrap;
-  /* width: 30%; */
   flex-grow: 2;
+  text-decoration: none;
+  color: black;
 
+}
+
+.container {
+  display: flex;
+  flex-grow: 2;
 }
 
 
@@ -53,6 +65,7 @@ body {
     margin: 1rem;
     border: 3px solid black;
     border-radius: 1.1rem;
+    font-family: $secondary-font;
 
   h1 {
       display: flex;

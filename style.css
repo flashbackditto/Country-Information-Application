@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Acme");
+@import url("https://fonts.googleapis.com/css?family=Acme|Roboto");
 * {
   box-sizing: border-box;
 }
@@ -10,8 +10,7 @@ body {
 #btnWrapper {
   display: inline-flex;
   justify-content: center;
-  margin: 0 auto;
-  width: 100vw;
+  width: 100%;
 }
 #btnWrapper .buttonContainer {
   margin: 1rem;
@@ -20,6 +19,9 @@ body {
   padding: 1rem;
   border-radius: 0.5rem;
   text-transform: uppercase;
+}
+#btnWrapper .buttonContainer .buttons:hover {
+  cursor: pointer;
 }
 
 #root {
@@ -32,10 +34,16 @@ body {
   flex-basis: 0;
 }
 
-.container {
+a {
   display: flex;
   flex-wrap: wrap;
-  /* width: 30%; */
+  flex-grow: 2;
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
   flex-grow: 2;
 }
 
@@ -43,6 +51,7 @@ body {
   margin: 1rem;
   border: 3px solid black;
   border-radius: 1.1rem;
+  font-family: "Roboto", sans-serif;
 }
 .card h1 {
   display: flex;
