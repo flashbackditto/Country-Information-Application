@@ -104,16 +104,12 @@ function removeLast(e){
 function popGetThenSort (e) {
 var data = JSON.parse(request.response);
 
-
 if (request.status >= 200 && request.status < 400) {  //optional if statement to console log if theres a 404 not found error or otherwise
-
-
 
   var byPop = data.slice(0);
   byPop.sort(function(a,b) {
       return a.population - b.population;
   });
-
 
   byPop.forEach( country => {
 
@@ -123,12 +119,11 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
 
 
-
     //Creates a div with a class of card
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
 
-   //TODO insert card inside <a> tag to make card clickable
+
    //Makes card a link to reeant wiki page
     const a = document.createElement('a');
     a.setAttribute('target', '_"blank"');
@@ -163,14 +158,41 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p3 = document.createElement('p');
 
         if (country.area === null) {
-
-        var countryNode = document.getElementById("root");
+         var countryNode = document.getElementById("root");
           p3.textContent = `Size: No size data available`;
 
-         } else {
+           } else {
           country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         p3.textContent = `Size: ${country.area} sq kilometers`;
       }
+
+    const p4 = document.createElement('p');
+    const p5 = document.createElement('p');
+
+    var weatherRequest = new XMLHttpRequest();
+
+    const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+    weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+
+
+    weatherRequest.onload = function () {
+    var weatherData = JSON.parse(weatherRequest.response);
+
+   // TODO
+  //works great for all but 11 countries, API lacks data for them. If statement below
+  // should solve the issue for those 11 but it currently does not
+
+   if (weatherData.main.temp === undefined) {
+
+     p4.textContent = `Temperature at capital: No Data Available`;
+     p5.textContent = `Weather Conditons: No Data Available `;
+   } else {
+    p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
+    p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
+  }
+ }
+
+    weatherRequest.send ();
 
     //re-appends container after removal
     app.appendChild(container);
@@ -186,6 +208,8 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     card.appendChild(p);
     card.appendChild(p2);
     card.appendChild(p3);
+    card.appendChild(p4);
+    card.appendChild(p5);
 
 
   });
@@ -233,6 +257,13 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     //Creates a div with a class of card
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
+
+
+    const a = document.createElement('a');
+    a.setAttribute('target', '_"blank"');
+    a.setAttribute('href', `https://en.wikipedia.org/wiki/${country.name}`);
+    container.appendChild(a);
+    a.appendChild(card);
 
 
     //creates an h1 set to the Countrys Name
@@ -285,8 +316,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     //re-appends container after removal
     app.appendChild(container);
 
-    //appends the cards to the container element
-    container.appendChild(card);
+
 
     //each card will have an h1 and p
     card.appendChild(h1);
@@ -340,6 +370,11 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
 
+    const a = document.createElement('a');
+    a.setAttribute('target', '_"blank"');
+    a.setAttribute('href', `https://en.wikipedia.org/wiki/${country.name}`);
+    container.appendChild(a);
+    a.appendChild(card);
 
     //creates an h1 set to the Countrys Name
     const h1 = document.createElement('h1');
@@ -377,13 +412,8 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     p3.textContent = `Size: ${country.area} sq kilometers`;
   }
 
-
-
     //re-appends container after removal
     app.appendChild(container);
-
-    //appends the cards to the container element
-    container.appendChild(card);
 
     //each card will have an h1 and p
     card.appendChild(h1);

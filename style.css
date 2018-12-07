@@ -19,9 +19,12 @@ body {
   padding: 1rem;
   border-radius: 0.5rem;
   text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.5);
+  transform: translate3D(0, -2px, 0);
 }
 
 #root {
