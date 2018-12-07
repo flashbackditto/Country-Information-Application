@@ -178,11 +178,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     weatherRequest.onload = function () {
     var weatherData = JSON.parse(weatherRequest.response);
 
-   // TODO
   //works great for all but 11 countries, API lacks data for them. If statement below
-  // should solve the issue for those 11 but it currently does not
-
-   if (weatherData.main.temp === undefined) {
+  // solves the issue for those 11.
+   if (weatherRequest.status === 404 ) {
 
      p4.textContent = `Temperature at capital: No Data Available`;
      p5.textContent = `Weather Conditons: No Data Available `;
