@@ -4,7 +4,13 @@
 }
 
 body {
-  background-color: #3A0896;
+  background-color: #D3EBFA;
+}
+
+.searchContainer {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
 }
 
 #btnWrapper {
@@ -23,8 +29,7 @@ body {
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.5);
-  transform: translate3D(0, -2px, 0);
+  transform: translate3D(0, -3px, 0);
 }
 
 #root {
@@ -55,12 +60,13 @@ a {
   border: 3px solid black;
   border-radius: 1.1rem;
   font-family: "Roboto", sans-serif;
+  background-color: #fff;
 }
 .card h1 {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  background-image: linear-gradient(120deg, #77dd77 0%, #a6c1ee 100%);
   padding: 1rem;
   margin-top: 0rem;
   border-radius: 0.9rem 0.9rem 0rem 0rem;
@@ -77,6 +83,7 @@ a {
   display: flex;
   justify-content: center;
   padding: 0 2rem;
+  font-weight: bold;
 }
 
 .card:nth-child(2n) h1 {

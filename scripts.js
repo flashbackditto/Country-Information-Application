@@ -69,7 +69,6 @@ const logo = document.createElement('img');
 
 logo.src = 'img/logo.png';
 
-
 const container = document.createElement('div');
 container.setAttribute('class','container');
 
@@ -79,11 +78,8 @@ app.appendChild(container);
 // creating a request variable and assigning a new XMLRequest object to it
 var request = new XMLHttpRequest ();
 
-
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
-// var data = JSON.parse(this.response);
-
 
 var popButton = document.getElementById("clickMe").addEventListener('click', () => {
   removeLast();
@@ -98,8 +94,6 @@ function removeLast(e){
      myNode.removeChild(myNode.childNodes[i]);
   }
 }
-
-
 
 function popGetThenSort (e) {
 var data = JSON.parse(request.response);
@@ -117,12 +111,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const container = document.createElement('div');
     container.setAttribute('class','container');
 
-
-
     //Creates a div with a class of card
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
-
 
    //Makes card a link to reeant wiki page
     const a = document.createElement('a');
@@ -135,7 +126,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const h1 = document.createElement('h1');
     h1.textContent = country.name;
 
-
     //Creates an h3 set to capital Name
     const h3 = document.createElement('h3');
 
@@ -145,9 +135,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
         h3.textContent = `Capital: ${country.capital}`;
    }
 
-
     //creates a paragraph and seets the text to population
-
     const p = document.createElement('p');
     country.population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p.textContent = `Population: ${country.population}`;
@@ -209,16 +197,13 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     card.appendChild(p4);
     card.appendChild(p5);
 
-
   });
  } else {
   console.log('error');
-}
-
+  }
 }
 
 request.send();
-
 
 // creating a request variable and assigning a new XMLRequest object to it
 var request = new XMLHttpRequest ();
@@ -226,14 +211,11 @@ var request = new XMLHttpRequest ();
 
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
-// var data = JSON.parse(this.response);
-
 
 var sizeButton = document.getElementById("size").addEventListener('click', () => {
   removeLast();
   areaGetThenSort();
 });
-
 
 function areaGetThenSort (e) {
 var data = JSON.parse(request.response);
@@ -245,7 +227,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
       return a.area - b.area;
   });
 
-
   byArea.forEach( country => {
 
     //re-Creates Container thats removed by popButtonClick function
@@ -256,13 +237,11 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
 
-
     const a = document.createElement('a');
     a.setAttribute('target', '_"blank"');
     a.setAttribute('href', `https://en.wikipedia.org/wiki/${country.name}`);
     container.appendChild(a);
     a.appendChild(card);
-
 
     //creates an h1 set to the Countrys Name
     const h1 = document.createElement('h1');
@@ -289,13 +268,8 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p3 = document.createElement('p');
 
 
-   //START OF SIZE SORT ISSUES
-
-
     if (country.area === null) {
     var countryNode = document.getElementById("root");
-      // while (countryNode.hasChildNodes()) {
-      // countryNode.removeChild(countryNode.firstChild);
       p3.textContent = `Size: No size data available`;
 
       for (let i = countryNode.childNodes.length -1; i >= 0; i--) {
@@ -307,14 +281,34 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     p3.textContent = `Size: ${country.area} sq kilometers`;
   }
 
- //  document.getElementById('root').removeChild(document.getElementById('root').firstChild);
 
+      const p4 = document.createElement('p');
+      const p5 = document.createElement('p');
 
+      var weatherRequest = new XMLHttpRequest();
+
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+
+      weatherRequest.onload = function () {
+      var weatherData = JSON.parse(weatherRequest.response);
+
+    //works great for all but 11 countries, API lacks data for them. If statement below
+    // solves the issue for those 11.
+     if (weatherRequest.status === 404 ) {
+
+       p4.textContent = `Temperature at capital: No Data Available`;
+       p5.textContent = `Weather Conditons: No Data Available `;
+     } else {
+      p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
+      p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
+    }
+   }
+
+      weatherRequest.send ();
 
     //re-appends container after removal
     app.appendChild(container);
-
-
 
     //each card will have an h1 and p
     card.appendChild(h1);
@@ -322,14 +316,13 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     card.appendChild(p);
     card.appendChild(p2);
     card.appendChild(p3);
-
-
+    card.appendChild(p4);
+    card.appendChild(p5);
 
   });
  } else {
   console.log('error');
-}
-
+  }
 }
 
 request.send();
@@ -337,12 +330,8 @@ request.send();
 // creating a request variable and assigning a new XMLRequest object to it
 var request = new XMLHttpRequest ();
 
-
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
-
-
-//document.getElementById('alphabetical').onclick = function () { //default data structure is Alphabetical
 
   var alphabeticalButton = document.getElementById("alphabetical").addEventListener('click', () => {
     removeLast();
@@ -356,13 +345,9 @@ var data = JSON.parse(request.response);
 if (request.status >= 200 && request.status < 400) { //optional if statement to console log if theres a 404 not found error or otherwise
   data.forEach( country => {
 
- console.log(country.capital);
-
-
  //re-Creates Container thats removed by popButtonClick function
  const container = document.createElement('div');
  container.setAttribute('class','container');
-
 
     //Creates a div with a class of card
     const card = document.createElement('div');
@@ -410,6 +395,31 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     p3.textContent = `Size: ${country.area} sq kilometers`;
   }
 
+      const p4 = document.createElement('p');
+      const p5 = document.createElement('p');
+
+      var weatherRequest = new XMLHttpRequest();
+
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+
+      weatherRequest.onload = function () {
+      var weatherData = JSON.parse(weatherRequest.response);
+
+    //works great for all but 11 countries, API lacks data for them. If statement below
+    // solves the issue for those 11.
+     if (weatherRequest.status === 404 ) {
+
+       p4.textContent = `Temperature at capital: No Data Available`;
+       p5.textContent = `Weather Conditons: No Data Available `;
+     } else {
+      p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
+      p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
+    }
+   }
+
+      weatherRequest.send ();
+
     //re-appends container after removal
     app.appendChild(container);
 
@@ -419,6 +429,8 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     card.appendChild(p);
     card.appendChild(p2);
     card.appendChild(p3);
+    card.appendChild(p4);
+    card.appendChild(p5);
   });
  } else {
   console.log('error');
