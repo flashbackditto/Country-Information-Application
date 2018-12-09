@@ -465,19 +465,6 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     const h1 = document.createElement('h1');
     h1.textContent = country.name;
 
-// This search section needs some serious re-working, the if statemnent effects nothing
-// Going to have to console.log and trial error this puzzle for a bit, off to work
-    const searchTerm = event.target.value.toLowerCase();
-
-    // Array.from(h1.textContent).forEach(function(h1){
-      // const countryName = h1.textContent;
-      if (country.name.toLowerCase().indexOf(searchTerm) != -1){
-        document.getElementsByClassName('card').display = 'none';
-      } else {
-        document.getElementsByClassName('card').display = 'none';
-      }
-    // });
-
 
     //re-Creates Container thats removed by popButtonClick function
     const container = document.createElement('div');
@@ -547,6 +534,27 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
       p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
       p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
     }
+
+
+
+
+    // This search section needs some serious re-working, the if statemnent effects nothing
+    // Going to have to console.log and trial error this puzzle for a bit, off to work
+        const searchTerm = event.target.value.toLowerCase();
+
+        // Array.from(h1.textContent).forEach(function(h1){
+
+           data.forEach( country => {
+             const searchTerm = event.target.value.toLowerCase();
+          if (country.name.toLowerCase().indexOf(searchTerm) != -1){
+            document.getElementsByClassName('container').display = 'none';
+          } else {
+            document.getElementsByClassName('container').display = 'none';
+          }
+       });
+
+
+
    }
 
       weatherRequest.send ();
@@ -562,6 +570,14 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     card.appendChild(p3);
     card.appendChild(p4);
     card.appendChild(p5);
+
+//Testing targeting methods for  search function 
+    if (h1.textContent == "Afghanistan") {
+      document.getElementsByTagName('a').removeFirstChild(document.getElementsByTagName('a'));
+    } else {
+      // document.getElementsByClassName('container').display = 'flex';
+    }
+
   });
  } else {
   console.log('error');
