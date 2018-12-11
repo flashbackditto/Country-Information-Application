@@ -33,6 +33,7 @@ body {
     border-radius: .5rem;
     text-transform: uppercase;
     font-family: $secondary-font;
+    background-color: #E7ABCD;
     }
 
   .buttons:hover{
@@ -42,6 +43,12 @@ body {
   }
 }
 
+#introWrapper {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 #root {
   max-width: 1200px;

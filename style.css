@@ -26,10 +26,18 @@ body {
   border-radius: 0.5rem;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
+  background-color: #E7ABCD;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
   transform: translate3D(0, -3px, 0);
+}
+
+#introWrapper {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #root {

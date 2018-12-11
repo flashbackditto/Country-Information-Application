@@ -571,11 +571,11 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     card.appendChild(p4);
     card.appendChild(p5);
 
-//Testing targeting methods for  search function 
-    if (h1.textContent == "Afghanistan") {
-      document.getElementsByTagName('a').removeFirstChild(document.getElementsByTagName('a'));
+//Testing targeting methods for  search function
+    if (h1.textContent === "Afghanistan") {
+
     } else {
-      // document.getElementsByClassName('container').display = 'flex';
+        document.getElementsByTagName('a').removeChild(document.getElementsByTagName('a'));
     }
 
   });
