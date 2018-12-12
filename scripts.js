@@ -183,10 +183,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     //re-appends container after removal
     app.appendChild(container);
 
-    //appends the cards to the container element
-    // container.appendChild(card);
-
-
     //each card will have an h1 and p
 
     card.appendChild(h1);
@@ -382,8 +378,6 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     const p3 = document.createElement('p');
-    // country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); //this reg ex is breaking the page resulting in alphaSort only getting to B, I think this may have to do with the decimals in area. it's also causing problems in popSort, however it dosen't seem to cause problems when inside an if statement.
-    // p3.textContent = `Size: ${country.area} sq kilometers`;
 
     if (country.area === null) {
 
@@ -500,8 +494,6 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     p2.textContent = `Currency: ${country.currencies[0].name}`;
 
     const p3 = document.createElement('p');
-    // country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); //this reg ex is breaking the page resulting in alphaSort only getting to B, I think this may have to do with the decimals in area. it's also causing problems in popSort, however it dosen't seem to cause problems when inside an if statement.
-    // p3.textContent = `Size: ${country.area} sq kilometers`;
 
     if (country.area === null) {
 
