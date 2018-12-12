@@ -445,11 +445,11 @@ var request = new XMLHttpRequest ();
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
-const searchBar = document.getElementById('search').addEventListener('keyup', (e) => {
-  searchByH1 ();
-  });
+const searchBar = document.forms['searchCountries'].querySelector('input');
+searchBar.addEventListener('keyup', function(e){
+  removeLast();
 
-function searchByH1 (e) {
+
 //begin accessing JSON data here
 var data = JSON.parse(request.response);
 
@@ -535,26 +535,6 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
       p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
     }
 
-
-
-
-    // This search section needs some serious re-working, the if statemnent effects nothing
-    // Going to have to console.log and trial error this puzzle for a bit, off to work
-        const searchTerm = event.target.value.toLowerCase();
-
-        // Array.from(h1.textContent).forEach(function(h1){
-
-           data.forEach( country => {
-             const searchTerm = event.target.value.toLowerCase();
-          if (country.name.toLowerCase().indexOf(searchTerm) != -1){
-            document.getElementsByClassName('container').display = 'none';
-          } else {
-            document.getElementsByClassName('container').display = 'none';
-          }
-       });
-
-
-
    }
 
       weatherRequest.send ();
@@ -571,22 +551,29 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     card.appendChild(p4);
     card.appendChild(p5);
 
-//Testing targeting methods for  search function
-    if (h1.textContent === "Afghanistan") {
+    const term = e.target.value.toLowerCase();
+    const countrySelector = document.querySelector('#root .card'); //this might not be selecting the container properly
+    const countries = countrySelector.getElementsByTagName('h1');
+    Array.from(countries).forEach(function(country){
+      const name = card.firstElementChild.textContent;
 
-    } else {
-        document.getElementsByTagName('a').removeChild(document.getElementsByTagName('a'));
-    }
+      if(name.toLowerCase().indexOf(term) != -1) {
+        container.style.display = 'flex';
+      } else {
+         container.style.display = 'none';
+      }
+    })
 
   });
  } else {
   console.log('error');
  }
-}
 
-
+});
 
 request.send();
+
+
 
 //Problem to solve
 //each time a button is clicked it adds the DOM elements to the page without refreshing
