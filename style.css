@@ -7,10 +7,27 @@ body {
   background-color: #D3EBFA;
 }
 
+#introWrapper {
+  display: flex;
+  margin: 6rem;
+}
+
+#controlWrapper {
+  margin: 2rem;
+}
+
 #searchCountries {
   width: 100%;
   display: inline-flex;
   justify-content: center;
+}
+#searchCountries input {
+  height: 3rem;
+  width: 35%;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 10px;
+  font-size: 15px;
 }
 
 #btnWrapper {
@@ -26,7 +43,10 @@ body {
   border-radius: 0.5rem;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
-  background-color: #E7ABCD;
+  font-weight: bolder;
+  background-color: #ea274e;
+  border: none;
+  box-shadow: 0px 4px 7px black;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
@@ -34,10 +54,14 @@ body {
 }
 
 #introWrapper {
-  margin: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+#introWrapper .describe {
+  margin: 1rem;
 }
 
 #root {
