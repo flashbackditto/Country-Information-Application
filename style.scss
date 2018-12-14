@@ -31,7 +31,7 @@ body {
 
   input {
     height: 3rem;
-    width: 35%;
+    width: 46%;
     border: 1px solid black;
     border-radius: .5rem;
     padding: 10px;
@@ -56,16 +56,17 @@ body {
     border-radius: .5rem;
     text-transform: uppercase;
     font-family: $secondary-font;
+    color: white;
+    letter-spacing: 0.2em;
     font-weight: bolder;
     background-color: #ea274e;
     border: none;
-    box-shadow: 0px 4px 7px black;
-
     }
 
   .buttons:hover{
     cursor: pointer;
     transform: translate3D(0, -3px, 0);
+    box-shadow: 0px 4px 7px black;
    }
   }
 }
@@ -115,6 +116,7 @@ a {
     font-family: $secondary-font;
     background-color: #fff;
 
+
   h1 {
       display: flex;
       justify-content: center;
@@ -129,18 +131,28 @@ a {
 
   h3 {
      display: flex;
-     justify-content: center;
+     justify-content: flex-start;
      padding: 0 2rem;
     }
 
   p {
        text-transform: capitalize;
        display: flex;
-       justify-content: center;
+       justify-content: flex-start;
        padding: 0 2rem;
        font-weight: bold;
      }
 }
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+
 
 
 .card:nth-child(2n) h1 {
