@@ -12,6 +12,10 @@ body {
   margin: 6rem;
 }
 
+#top {
+  margin: 2rem 0rem 2rem 6rem;
+}
+
 #controlWrapper {
   margin: 2rem;
 }
