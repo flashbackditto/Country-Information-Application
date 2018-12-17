@@ -12,12 +12,26 @@ body {
   margin: 6rem;
 }
 
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 #top {
+  display: flex;
   margin: 2rem 0rem 2rem 6rem;
+  justify-content: flex-start;
+  width: 30%;
 }
 
 #controlWrapper {
+  display: flex;
   margin: 2rem;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
 }
 
 #searchCountries {
