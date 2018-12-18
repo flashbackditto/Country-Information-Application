@@ -32,20 +32,14 @@ body {
   justify-content: flex-end;
   flex-direction: column;
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
-
-#searchCountries {
-  width: 100%;
-  display: inline-flex;
-  justify-content: center;
-}
-#searchCountries input {
-  height: 3rem;
-  width: 46%;
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  padding: 10px;
-  font-size: 15px;
+#controlWrapper h1 {
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
+  font-size: 230%;
+  margin-bottom: 0;
+  text-decoration: underline;
 }
 
 #btnWrapper {
@@ -65,12 +59,30 @@ body {
   letter-spacing: 0.2em;
   font-weight: bolder;
   background-color: #ea274e;
-  border: none;
+  border: 1px solid transparent;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
-  transform: translate3D(0, -3px, 0);
-  box-shadow: 0px 4px 7px black;
+  transform: translate3D(0, -2px, 0);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.9);
+  border: 1px solid black;
+}
+
+#searchCountries {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+#searchCountries input {
+  height: 3rem;
+  width: 46%;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 10px;
+  font-size: 15px;
+}
+#searchCountries input:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 #introWrapper {
@@ -144,6 +156,7 @@ footer {
   justify-content: center;
   background-color: black;
   color: white;
+  margin: 0 auto;
 }
 
 .card:nth-child(2n) h1 {
