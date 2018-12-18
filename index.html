@@ -11,20 +11,27 @@
 </head>
 
 <body>
-<br>
-<br>
-<header>
-  <nav>
 
-<a id = "logo" href = "#"></a>
 
-   <ul>
-     <li><a href = "#">About</a></li>
-     <li><a href = "#"></a>APIs</li>
-     <li><a href = "#">Country Info Finder</a></li>
-   </ul>
-  </nav>
-</header>
+    <div class="topnav">
+      <a href="#home" class="active" id="logo"><img src = "img/logo.png"></a>
+
+      <div id="myLinks">
+        <a href="#about">About</a>
+        <a href="#">Country Info Finder</a>
+        <a href="#">APIS</a>
+
+        <a href="https://www.facebook.com/wolfcreekboys/" target="_blank"> <i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/wolf_creek_boys/" target="_blank"> <i class="fab fa-instagram"></i></a>
+      </div>
+
+      <div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    </div>
+
 
 <div class = "landing">
 </div>
@@ -69,25 +76,32 @@
   <div id = "introWrapper">
   <section class = "describe"  id = "intro">
     <p>This application is for anyone curious about the capital, population, currency, size or weather
-    of any country. </p>
+    of any country. All UN recognized countries - as well as a few that aren't - are included. Search for
+    specific countries in the search bar or display all of the countries by selecting one of the sorting options.
+    If you're interested in more information about a particular country, clicking on any
+    individual country's card will open the relevant wiki page in a new tab.</p>
   </section>
 
   <section class = "describe" id ="describeApp" >
-
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-   culpa qui officia deserunt mollit anim id est laborum. </p>
-
+    <div>
+    <p>General capital, population, currency, and size information in this application is provided
+    by restcountries.eu API and each country's capital weather information
+    is accessed through the api.openweathermap.org API. These two API's being free is quite generous. However,
+    in life you often get what you pay for, in this case, that statement rears it's head as a limit on API requests per minute.
+    If weather information is not currently being displayed it is likely other users have temporarily locked API access by making
+    more requests than the free access allows per minute, this should only last a few minutes before normal service continues. </p>
+    <br>
+    <br>
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+ <div>
+    <img id = "secondLogo" src = "img/logo2.png">
+  </div>
   </section>
   </div>
 
