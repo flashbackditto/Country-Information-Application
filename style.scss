@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Acme|Roboto|Arvo');
 
 
 $primary-color: #D3EBFA;
 $heading-font: 'Acme', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
+$paragraph-font: 'Arvo';
 
 
 * {
@@ -172,6 +173,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: $paragraph-font;
+
 
   .describe {
     margin: 1rem;
@@ -185,6 +188,10 @@ h1 {
 
    p {
      align-items: flex-start;
+     background: rgba(255, 255, 255, 0.7);
+     padding: 1rem;
+     border-radius: 1rem;
+     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
 
    }
 
@@ -193,6 +200,7 @@ h1 {
        width: 450px;
        align-items: flex-end;
        margin: 0 2rem 2rem 0;
+       padding-top: 4.5rem;
    }
 
 }
@@ -260,10 +268,11 @@ a {
 
 footer {
   text-align: center;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
   background-color: black;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
 }
 
