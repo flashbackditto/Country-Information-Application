@@ -22,7 +22,7 @@ body {
 }
 
 .topnav #myLinks {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-content: flex-end;
@@ -38,6 +38,8 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: inline-flex;
+  justify-content: center;
+  margin-left: 5rem;
 }
 
 .topnav a.icon {
@@ -153,12 +155,16 @@ body {
   display: flex;
   width: 100%;
 }
+#describeApp h1 {
+  margin-bottom: 0;
+}
 #describeApp p {
   align-items: flex-start;
   background: rgba(255, 255, 255, 0.7);
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
+  margin-top: 0;
 }
 #describeApp #secondLogo {
   height: auto;
