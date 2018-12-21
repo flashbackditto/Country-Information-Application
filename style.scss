@@ -33,13 +33,12 @@ body {
 
 .topnav #myLinks {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
-  align-content: flex-end;
+  align-items: center;
   width: 85%;
   text-transform: uppercase;
   font-family: 'Allerta Stencil', sans-serif;
-  align-items: center;
+  padding-right: 4rem;
 }
 
 .topnav a {
@@ -50,6 +49,7 @@ body {
   display: inline-flex;
   justify-content: center;
   margin-left: 5rem;
+  flex-grow: 0;
 }
 
 .topnav a.icon {
@@ -105,7 +105,8 @@ h1 {
   text-transform: capitalize;
   font-size: 230%;
   margin-bottom: 0;
-  text-decoration: underline;
+
+  text-shadow: 3px 3px 5px white;
 
 
 }
@@ -181,6 +182,19 @@ h1 {
   .describe {
     margin: 1rem;
     text-indent: 2rem;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    p {
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
+      margin-top: 0;
+    }
   }
 }
 
@@ -188,18 +202,6 @@ h1 {
    display: flex;
    width: 100%;
 
-   h1 {
-     margin-bottom: 0;
-   }
-
-   p {
-     align-items: flex-start;
-     background: rgba(255, 255, 255, 0.7);
-     padding: 1rem;
-     border-radius: 1rem;
-     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
-     margin-top: 0;
-   }
 
    #secondLogo {
        height:auto;
@@ -239,7 +241,7 @@ a {
 
 .card {
     margin: 1rem;
-    border: 3px solid black;
+    border: 3px solid #fff;
     border-radius: 1.1rem;
     font-family: $secondary-font;
     background-color: #fff;
@@ -300,6 +302,7 @@ footer {
 .card:hover {
   box-shadow: 2px 8px 45px rgba(0, 0, 0, .5);
   transform: translate3D(0, -2px, 0);
+  border: 3px solid black;
 }
 
 @media screen and (min-width: 600px) {
