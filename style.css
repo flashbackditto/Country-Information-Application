@@ -161,6 +161,15 @@ body {
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
   margin-top: 0;
 }
+#introWrapper .describe p a {
+  display: inline-block;
+  text-indent: 0;
+  font-weight: bold;
+}
+#introWrapper .describe a:hover {
+  color: blue;
+  text-decoration: underline;
+}
 
 #describeApp {
   display: flex;
@@ -171,7 +180,7 @@ body {
   width: 450px;
   align-items: flex-end;
   margin: 0 2rem 2rem 0;
-  padding-top: 4.5rem;
+  padding-top: 6rem;
 }
 
 #root {
@@ -251,7 +260,7 @@ footer {
 }
 
 .card:hover {
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 8px 45px rgba(0, 0, 0, 0.6);
   transform: translate3D(0, -2px, 0);
   border: 3px solid black;
 }
