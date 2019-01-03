@@ -48,7 +48,7 @@ body {
   font-size: 17px;
   display: inline-flex;
   justify-content: center;
-  margin-left: 5rem;
+  margin-left: 4rem;
   flex-grow: 0;
 }
 
@@ -318,14 +318,45 @@ footer {
   border: 3px solid black;
 }
 
-@media screen and (min-width: 600px) {
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+
+  #top {
+    display: flex;
+    justify-content: center;
+  }
+
+  #btnWrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  #searchCountries {
+
+    input {
+      width: 100%;
+    }
+  }
+
   .card {
     flex: 1 1 calc(50% - 2rem);
   }
-}
 
-@media screen and (min-width: 900px) {
-  .card {
-    flex: 1 1 calc(33% - 2rem);
+  #describeApp {
+     display: flex;
+     width: auto;
+     flex-direction: column;
+     justify-content: center;
+     margin: auto;
+
+     #secondLogo {
+         display: flex;
+         height:200px;
+         width: auto;
+         align-items: center;
+         justify-content: center;
+         padding-top: 0;
+         margin: auto;
+     }
+
   }
 }
