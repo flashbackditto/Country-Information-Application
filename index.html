@@ -7,14 +7,16 @@
   <title>Country Information Application</title>
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+  integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
 
 
     <div class="topnav">
-      <a href="#home" class="active" id="logo"><img src = "img/logo.png"></a>
+      <a href="#home" class="active" id="logo"><img src = "img/navLogo.png"></a>
 
       <div id="myLinks">
         <a href="#intro">About</a>
@@ -110,6 +112,22 @@
 
 
   <script src="scripts.js"></script>
+
+
+  <script>
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  </script>
+
+
 </body>
 
 </html>
