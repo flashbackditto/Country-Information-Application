@@ -12,6 +12,7 @@ body {
   height: 75px;
   width: 75px;
   background-color: black;
+  border: 2px solid white;
   border-radius: 5px;
 }
 
@@ -29,7 +30,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   width: 85%;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: "Allerta Stencil", sans-serif;
   padding-right: 4rem;
 }
@@ -44,6 +45,7 @@ body {
   margin-left: 4rem;
   flex-grow: 0;
   letter-spacing: 1px;
+  font-weight: bold;
 }
 
 .topnav a.icon {
@@ -62,6 +64,15 @@ body {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.landing {
+  background: url(img/landing.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  top: 0;
 }
 
 #introWrapper {
