@@ -20,7 +20,7 @@ body {
   overflow: hidden;
   background-color: #333;
   position: relative;
-  background-color: gray;
+  background-color: #212342;
   display: inline-flex;
   width: 100%;
 }
@@ -46,6 +46,7 @@ body {
   flex-grow: 0;
   letter-spacing: 1px;
   font-weight: bold;
+  transition: all 0.2s ease;
 }
 
 .topnav a.icon {
@@ -64,6 +65,7 @@ body {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+  border-radius: 3px;
 }
 
 .landing {
@@ -73,6 +75,39 @@ body {
   width: 100%;
   margin: auto;
   top: 0;
+}
+
+.iconBar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.iconBar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.4s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.iconBar a:hover {
+  background-color: #ea274e;
+}
+
+.github, .youtube {
+  background: black;
+}
+
+.linkedin {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  background: black;
 }
 
 #introWrapper {
@@ -85,6 +120,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
 
 #top {
@@ -128,6 +164,7 @@ body {
   font-weight: bolder;
   background-color: #ea274e;
   border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
@@ -227,6 +264,7 @@ a {
   border-radius: 1.1rem;
   font-family: "Roboto", sans-serif;
   background-color: #fff;
+  flex-grow: 2;
 }
 .card h1 {
   display: flex;
@@ -266,11 +304,11 @@ footer {
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
-.card:nth-child(4n) h1 {
+.card:nth-child(3n) h1 {
   background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
 }
 
-.card:nth-child(5n) h1 {
+.card:nth-child(4n) h1 {
   background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
 }
 
@@ -283,7 +321,7 @@ footer {
 @media only screen and (min-width: 300px) and (max-width: 700px) {
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #212342;
     position: relative;
   }
 
@@ -306,7 +344,7 @@ footer {
   }
 
   .topnav a.icon {
-    background: #333;
+    background: #212342;
     display: block;
     position: absolute;
     right: 0;
@@ -329,6 +367,8 @@ footer {
     width: auto;
     margin: auto;
     padding-top: 4rem;
+    display: flex;
+    justify-content: center;
   }
 
   #btnWrapper {
