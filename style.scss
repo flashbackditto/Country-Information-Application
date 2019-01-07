@@ -83,6 +83,38 @@ body {
   width: 100%;
   margin: auto;
   top: 0;
+  display: table;
+}
+
+.title {
+  margin: auto;
+  width: 100%;
+
+    .content {
+      text-align: center;
+      margin: auto;
+
+      h1 {
+        text-align: center;
+        margin-top: 12rem;
+        font-size: 500%;
+        font-family: $heading-font;
+        text-shadow: 3px 3px 15px white;
+        animation-name: titleAnim;
+        animation-duration: 4s;
+      }
+    }
+}
+
+@keyframes titleAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
 }
 
 .iconBar {
@@ -118,8 +150,19 @@ body {
   background: black;
 }
 
+.topLink {
+  border-top: 1px solid white;
+  background: black;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-#introWrapper {
+#intro {
+  margin-top: 3rem;
+}
+
+.introWrapper {
   display: flex;
   margin: 6rem;
 }
@@ -176,7 +219,7 @@ h1 {
     font-weight: bolder;
     background-color: #ea274e;
     border: 1px solid transparent;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     }
 
   .buttons:hover{
@@ -208,7 +251,7 @@ h1 {
 
   }
 
-#introWrapper {
+.introWrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -222,6 +265,7 @@ h1 {
 
     h1 {
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     p {
@@ -290,6 +334,7 @@ a {
     font-family: $secondary-font;
     background-color: #fff;
     flex-grow: 2;
+    transition: all 0.3s ease;
 
   h1 {
       display: flex;

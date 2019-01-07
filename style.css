@@ -75,8 +75,35 @@ body {
   width: 100%;
   margin: auto;
   top: 0;
+  display: table;
 }
 
+.title {
+  margin: auto;
+  width: 100%;
+}
+.title .content {
+  text-align: center;
+  margin: auto;
+}
+.title .content h1 {
+  text-align: center;
+  margin-top: 12rem;
+  font-size: 500%;
+  font-family: "Acme", sans-serif;
+  text-shadow: 3px 3px 15px white;
+  animation-name: titleAnim;
+  animation-duration: 4s;
+}
+
+@keyframes titleAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .iconBar {
   position: fixed;
   top: 50%;
@@ -110,7 +137,19 @@ body {
   background: black;
 }
 
-#introWrapper {
+.topLink {
+  border-top: 1px solid white;
+  background: black;
+  font-family: "Allerta Stencil", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#intro {
+  margin-top: 3rem;
+}
+
+.introWrapper {
   display: flex;
   margin: 6rem;
 }
@@ -164,7 +203,7 @@ body {
   font-weight: bolder;
   background-color: #ea274e;
   border: 1px solid transparent;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 #btnWrapper .buttonContainer .buttons:hover {
   cursor: pointer;
@@ -190,7 +229,7 @@ body {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-#introWrapper {
+.introWrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -198,14 +237,15 @@ body {
   justify-content: center;
   font-family: "Arvo";
 }
-#introWrapper .describe {
+.introWrapper .describe {
   margin: 1rem;
   text-indent: 2rem;
 }
-#introWrapper .describe h1 {
+.introWrapper .describe h1 {
   margin-bottom: 0;
+  margin-top: 0;
 }
-#introWrapper .describe p {
+.introWrapper .describe p {
   align-items: flex-start;
   background: rgba(255, 255, 255, 0.7);
   padding: 1rem;
@@ -213,12 +253,12 @@ body {
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
   margin-top: 0;
 }
-#introWrapper .describe p a {
+.introWrapper .describe p a {
   display: inline-block;
   text-indent: 0;
   font-weight: bold;
 }
-#introWrapper .describe a:hover {
+.introWrapper .describe a:hover {
   color: blue;
   text-decoration: underline;
 }
@@ -265,6 +305,7 @@ a {
   font-family: "Roboto", sans-serif;
   background-color: #fff;
   flex-grow: 2;
+  transition: all 0.3s ease;
 }
 .card h1 {
   display: flex;
