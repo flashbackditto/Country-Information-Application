@@ -13,6 +13,7 @@ $paragraph-font: 'Arvo';
 
 body {
   background-color: $primary-color;
+  margin: 0;
 }
 
 #logo img{
@@ -335,6 +336,7 @@ a {
     background-color: #fff;
     flex-grow: 2;
     transition: all 0.3s ease;
+    text-align: center;
 
   h1 {
       display: flex;
@@ -432,10 +434,17 @@ footer {
     color: black;
   }
 
-
   .active {
     background-color: black;
     color: white;
+  }
+
+  .title .content h1 {
+    font-size: 250%;
+  }
+
+  .iconBar {
+    display: none;
   }
 
   #top {
@@ -444,6 +453,12 @@ footer {
     padding-top: 4rem;
     display: flex;
     justify-content: center;
+
+    img {
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+    }
   }
 
   #btnWrapper {
