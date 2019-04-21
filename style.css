@@ -5,6 +5,7 @@
 
 body {
   background-color: #D3EBFA;
+  margin: 0;
 }
 
 #logo img {
@@ -306,6 +307,7 @@ a {
   background-color: #fff;
   flex-grow: 2;
   transition: all 0.3s ease;
+  text-align: center;
 }
 .card h1 {
   display: flex;
@@ -404,12 +406,25 @@ footer {
     color: white;
   }
 
+  .title .content h1 {
+    font-size: 250%;
+  }
+
+  .iconBar {
+    display: none;
+  }
+
   #top {
     width: auto;
     margin: auto;
     padding-top: 4rem;
     display: flex;
     justify-content: center;
+  }
+  #top img {
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
   }
 
   #btnWrapper {
