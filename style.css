@@ -239,7 +239,6 @@ body {
   font-family: "Arvo";
 }
 .introWrapper .describe {
-  margin: 1rem;
   text-indent: 2rem;
 }
 .introWrapper .describe h1 {
@@ -252,7 +251,7 @@ body {
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
-  margin-top: 0;
+  margin: 1rem;
 }
 .introWrapper .describe p a {
   display: inline-block;
