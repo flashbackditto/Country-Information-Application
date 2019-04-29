@@ -75,7 +75,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p = document.createElement('p');
     country.population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p.textContent = `Population: ${country.population}`;
-    p.style.color = 'red';
+
+    //making sorted element stand out
+    p.setAttribute("style", "color: #e20b0b; text-decoration: underline;");
 
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
@@ -139,11 +141,11 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 request.send();
 
 // creating a request variable and assigning a new XMLRequest object to it
-var request = new XMLHttpRequest ();
+//var request = new XMLHttpRequest ();
 
 
 //Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+//request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 var sizeButton = document.getElementById("size").addEventListener('click', () => {
   removeLast();
@@ -213,6 +215,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
       country.area = country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p3.textContent = `Size: ${country.area} sq kilometers`;
   }
+
+  //making sorted element stand out
+  p3.setAttribute("style", "color: #e20b0b; text-decoration: underline;");
 
 
       const p4 = document.createElement('p');
