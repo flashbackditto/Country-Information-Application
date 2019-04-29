@@ -75,6 +75,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const p = document.createElement('p');
     country.population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     p.textContent = `Population: ${country.population}`;
+    p.style.color = 'red';
 
     const p2 = document.createElement('p');
     p2.textContent = `Currency: ${country.currencies[0].name}`;
