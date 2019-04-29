@@ -98,7 +98,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
     var weatherRequest = new XMLHttpRequest();
 
-    const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+    const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
     weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
 
@@ -140,12 +140,9 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
 request.send();
 
-// creating a request variable and assigning a new XMLRequest object to it
-//var request = new XMLHttpRequest ();
-
 
 //Open a new connection, using GET request on the URL endpoint
-//request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 var sizeButton = document.getElementById("size").addEventListener('click', () => {
   removeLast();
@@ -225,7 +222,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
       weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
@@ -265,11 +262,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
 request.send();
 
-// creating a request variable and assigning a new XMLRequest object to it
-var request = new XMLHttpRequest ();
-
-//Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
   var alphabeticalButton = document.getElementById("alphabetical").addEventListener('click', () => {
     removeLast();
@@ -336,7 +328,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
       weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
@@ -376,10 +368,10 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 request.send();
 
 
-var request = new XMLHttpRequest ();
+//var request = new XMLHttpRequest ();
 
 //Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+//request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 const searchBar = document.forms['searchCountries'].querySelector('input');
 searchBar.addEventListener('keyup', function(e){
