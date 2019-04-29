@@ -262,6 +262,8 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
 request.send();
 
+//Open a new connection, using GET request on the URL endpoint
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
   var alphabeticalButton = document.getElementById("alphabetical").addEventListener('click', () => {
     removeLast();
@@ -368,10 +370,10 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 request.send();
 
 
-//var request = new XMLHttpRequest ();
+var request = new XMLHttpRequest ();
 
 //Open a new connection, using GET request on the URL endpoint
-//request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 const searchBar = document.forms['searchCountries'].querySelector('input');
 searchBar.addEventListener('keyup', function(e){
