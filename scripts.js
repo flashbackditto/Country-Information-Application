@@ -101,7 +101,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
     weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
-
     weatherRequest.onload = function () {
     var weatherData = JSON.parse(weatherRequest.response);
 
@@ -123,7 +122,6 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     app.appendChild(container);
 
     //each card will have an h1 and p
-
     card.appendChild(h1);
     card.appendChild(h3);
     card.appendChild(p);
@@ -491,3 +489,6 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 });
 
 request.send();
+
+//figure out if you can put DOM appends in a single functin and just call that function rather than
+//repeating big code blocks
