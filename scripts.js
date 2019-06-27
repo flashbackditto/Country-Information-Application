@@ -98,7 +98,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
     var weatherRequest = new XMLHttpRequest();
 
-    const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
+    const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
     weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
     weatherRequest.onload = function () {
@@ -220,7 +220,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
       weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
@@ -328,7 +328,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
       weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
@@ -436,7 +436,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dceDISABLE";
+      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
       weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
