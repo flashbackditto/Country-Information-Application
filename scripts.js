@@ -1,18 +1,12 @@
 
 const app = document.getElementById('root');
-const world = document.getElementById('top');
-const logo = document.createElement('img');
-
-logo.src = 'img/logo.png';
-
 const container = document.createElement('div');
-container.setAttribute('class','container');
 
-world.appendChild(logo);
+container.setAttribute('class','container');
 app.appendChild(container);
 
 // creating a request variable and assigning a new XMLRequest object to it
-var request = new XMLHttpRequest ();
+var request = new XMLHttpRequest();
 
 //Open a new connection, using GET request on the URL endpoint
 request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
@@ -23,7 +17,6 @@ var popButton = document.getElementById("clickMe").addEventListener('click', () 
 });
 
 function removeLast(e){
-
 //Clear previously created elements to make room for new elements
  var myNode = document.getElementById("root");
   for (let i = myNode.childNodes.length - 1; i >= 0; i--) {
@@ -98,25 +91,24 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
     var weatherRequest = new XMLHttpRequest();
 
-    const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
-    weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+    // const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+    // weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial`, true);
 
     weatherRequest.onload = function () {
-    var weatherData = JSON.parse(weatherRequest.response);
+      var weatherData = JSON.parse(weatherRequest.response);
 
-  //works great for all but 11 countries, API lacks data for them. If statement below
-  // solves the issue for those 11.
-   if (weatherRequest.status === 404 ) {
+      //works great for all but 11 countries, API lacks data for them. If statement below
+      // solves the issue for those 11.
+      if (weatherRequest.status === 404 ) {
+        p4.textContent = `Temperature at capital: No Data Available`;
+        p5.textContent = `Weather Conditons: No Data Available `;
+      } else {
+        p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
+        p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
+      }
+    }
 
-     p4.textContent = `Temperature at capital: No Data Available`;
-     p5.textContent = `Weather Conditons: No Data Available `;
-   } else {
-    p4.textContent = `Temperature at Capital: ${weatherData.main.temp}F`;
-    p5.textContent = `Weather Conditions: ${weatherData.weather[0].description}`;
-  }
- }
-
-    weatherRequest.send ();
+    // weatherRequest.send();
 
     //re-appends container after removal
     app.appendChild(container);
@@ -140,7 +132,7 @@ request.send();
 
 
 //Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+// request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 var sizeButton = document.getElementById("size").addEventListener('click', () => {
   removeLast();
@@ -220,8 +212,8 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
-      weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+      // const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      // weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
       var weatherData = JSON.parse(weatherRequest.response);
@@ -238,7 +230,7 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
     }
    }
 
-      weatherRequest.send ();
+      // weatherRequest.send ();
 
     //re-appends container after removal
     app.appendChild(container);
@@ -258,10 +250,10 @@ if (request.status >= 200 && request.status < 400) {  //optional if statement to
   }
 }
 
-request.send();
+// request.send();
 
 //Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+// request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
   var alphabeticalButton = document.getElementById("alphabetical").addEventListener('click', () => {
     removeLast();
@@ -328,8 +320,8 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
-      weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+      // const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      // weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
       var weatherData = JSON.parse(weatherRequest.response);
@@ -346,7 +338,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     }
    }
 
-      weatherRequest.send ();
+      // weatherRequest.send ();
 
     //re-appends container after removal
     app.appendChild(container);
@@ -365,13 +357,13 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
  }
 }
 
-request.send();
+// request.send();
 
 
-var request = new XMLHttpRequest ();
+// var request = new XMLHttpRequest ();
 
 //Open a new connection, using GET request on the URL endpoint
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+// request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
 
 const searchBar = document.forms['searchCountries'].querySelector('input');
 searchBar.addEventListener('keyup', function(e){
@@ -436,8 +428,8 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
 
       var weatherRequest = new XMLHttpRequest();
 
-      const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
-      weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
+      // const API_KEY = "7557d9cd391404e409ff6415e3d53dce";
+      // weatherRequest.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${API_KEY}&units=imperial` , true);
 
       weatherRequest.onload = function () {
       var weatherData = JSON.parse(weatherRequest.response);
@@ -454,7 +446,7 @@ if (request.status >= 200 && request.status < 400) { //optional if statement to 
     }
    }
 
-      weatherRequest.send ();
+      // weatherRequest.send ();
 
     //re-appends container after removal
     app.appendChild(container);

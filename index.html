@@ -13,139 +13,117 @@
   crossorigin="anonymous"></script>
 </head>
 
-<body>
-
-<div class="topnav">
-  <a href="#controlWrapper" class="active" id="logo">
-    <img src = "img/navLogo.png">
-  </a>
-  <div id="myLinks">
-    <a href="#intro">About</a>
-    <a href="#controlWrapper">Country Info Finder</a>
-    <a href="#describeApp">APIS</a>
-  </div>
-  <div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<div class = "landing">
-  <div class = "title">
-    <div class = "content">
-      <h1>Country Information</h1>
-    </div>
-  </div>
-  <div class="iconBar">
-    <a href ="https://github.com/flashbackditto" target="_blank" class = "github">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/adam-lee-583426170/" target="_blank" class="linkedin">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://www.youtube.com/user/GeographyNow" target="_blank" class="youtube">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="#myLinks" class="topLink">
-      <i class="fa fa-arrow-alt-circle-up"></i>
-    </a>
-  </div>
-</div>
-
-
-<div class = "introWrapper">
-  <!-- <section class = "describe"  id = "intro">
-    <h1>About</h1>
-    <p>This application is for anyone curious about the capital, population, currency, size or weather
-    of any country. All UN recognized countries - as well as a few that aren't - are included. Search for
-    specific countries in the search bar or display all of the countries by selecting one of the sorting options.
-    If you're interested in more information about a particular country, clicking on any
-    individual country's card will open the relevant wiki page in a new tab.</p>
-  </section> -->
-</div>
-
-<div class = "inputContainer">
-
-<div id = "top"></div>
-  <div id = "controlWrapper">
-
-    <h1> Country Information </h1>
-
-    <div class = "wrapper" id = "btnWrapper">
-
-    <div class = "buttonContainer">
-      <input class = "buttons" id="alphabetical" type="button" value="Alphabetical Sort"/>
-    </div>
-
-    <div class = "buttonContainer">
-      <input class = "buttons" id="size" type="button" value="Size Sort"/>
-    </div>
-
-     <div class = "buttonContainer">
-       <input class = "buttons" id="clickMe" type="button" value="Population Sort"/>
-     </div>
-
-   </div>
-
-    <form id = "searchCountries">
-     <input type="text" placeholder="Search Countries..."/>
-   </form>
-
-  </div>
-
-</div>
-
-  <div id="root"></div>
-
-  <div class = "introWrapper">
-
-  <section class = "describe" id ="describeApp" >
-    <div>
-      <h1> APIs </h1>
-    <p>General capital, population, currency, and size information in this application is provided
-    by <a href= "https://restcountries.eu/" target="_blank">restcountries.eu API</a> and each country's capital weather information
-    is accessed through the <a href = "https://openweathermap.org/" target="_blank">openweathermap.org API</a>. These two API's being free is quite generous. However,
-    in life you often get what you pay for, in this case, that statement rears it's head as a limit on API requests per minute.
-    If weather information is not currently being displayed it is likely other users have temporarily locked API access by making
-    more requests than the free access allows per minute, this should only last a few minutes before normal service continues. </p>
-    <br>
-    <br>
-    <h1> Github </h1>
-     <p> This application was designed and created by Adam Lee and is free for anyone to use.
-       The code for this project can be found <a href = "https://github.com/flashbackditto/Country-Information-Application" target="_blank">here</a>.
-       If you are interested in collaborating on a project or just want to follow some of my
-        current open projects, follow me on <a href = "https://github.com/flashbackditto" target="_blank">Github</a>.</p>
+  <body>
+    <div class="topnav">
+      <a href="#controlWrapper" class="active" id="logo">
+        <img src="img/navLogo.png">
+      </a>
+      <div id="myLinks">
+        <a href="#intro">About</a>
+        <a href="#controlWrapper">Country Info Finder</a>
+        <a href="#describeApp">APIS</a>
       </div>
- <div>
-    <img id = "secondLogo" src = "img/logo2.png">
-  </div>
-  </section>
-  </div>
+      <div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
 
-  <footer>
-      <p> Adam R. Lee Design </p>
-  </footer>
+    <div class="landing">
+      <div class="title">
+        <div class="content">
+          <h1>Country Information</h1>
+        </div>
+      </div>
+      <div class="iconBar">
+        <a href="https://github.com/flashbackditto" target="_blank" class="github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/adam-lee-583426170/" target="_blank" class="linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/user/GeographyNow" target="_blank" class="youtube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#myLinks" class="topLink">
+          <i class="fa fa-arrow-alt-circle-up"></i>
+        </a>
+      </div>
+    </div>
 
+    <div class="introWrapper">
+      <section class="describe"  id="intro">
+        <h1>About</h1>
+        <p>This application is for anyone curious about the capital, population, currency, size or weather
+        of any country. All UN recognized countries - as well as a few that aren't - are included. Search for
+        specific countries in the search bar or display all of the countries by selecting one of the sorting options.
+        If you're interested in more information about a particular country, clicking on any
+        individual country's card will open the relevant wiki page in a new tab.</p>
+      </section>
+    </div>
 
+    <div class="inputContainer">
+      <div id="controlWrapper">
+        <h1> Country Information </h1>
+        <div class="wrapper" id="btnWrapper">
+          <div class="buttonContainer">
+            <input class="buttons" id="alphabetical" type="button" value="Alphabetical Sort"/>
+          </div>
+          <div class="buttonContainer">
+            <input class="buttons" id="size" type="button" value="Size Sort"/>
+          </div>
+          <div class="buttonContainer">
+           <input class="buttons" id="clickMe" type="button" value="Population Sort"/>
+          </div>
+        </div>
+        <form id="searchCountries">
+          <input type="text" placeholder="Search Countries..."/>
+        </form>
+      </div>
+    </div>
 
-  <script src="scripts.js"></script>
+    <div id="root"></div>
 
+    <div class="introWrapper">
+      <section class="describe" id="describeApp" >
+        <div>
+          <h1> APIs </h1>
+          <p>General capital, population, currency, and size information in this application is provided
+          by <a href="https://restcountries.eu/" target="_blank">restcountries.eu API</a> and each country's capital weather information
+          is accessed through the <a href="https://openweathermap.org/" target="_blank">openweathermap.org API</a>. These two API's being free is quite generous. However,
+          in life you often get what you pay for, in this case, that statement rears it's head as a limit on API requests per minute.
+          If weather information is not currently being displayed it is likely other users have temporarily locked API access by making
+          more requests than the free access allows per minute, this should only last a few minutes before normal service continues. </p>
+          <br>
+          <br>
+          <h1> Github </h1>
+          <p> This application was designed and created by Adam Lee and is free for anyone to use.
+          The code for this project can be found <a href="https://github.com/flashbackditto/Country-Information-Application" target="_blank">here</a>.
+          If you are interested in collaborating on a project or just want to follow some of my
+          current open projects, follow me on <a href="https://github.com/flashbackditto" target="_blank">Github</a>.</p>
+        </div>
+        <div>
+          <img id="secondLogo" src="img/logo2.png">
+        </div>
+      </section>
+    </div>
 
-  <script>
-  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "flex") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
+    <footer>
+        <p> Adam R. Lee Design </p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
     }
-  }
-
-  </script>
-
-
-</body>
-
+    </script>
+  </body>
 </html>
